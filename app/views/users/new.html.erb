@@ -1,0 +1,23 @@
+<h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+<h2>Create your account here!</h2>
+
+<%= form_tag '' do %>
+  <div>
+    <%= label_tag 'name' %><br>
+    <%= text_field_tag 'name' %>
+  </div>
+  <div>
+    <%= label_tag 'email' %><br>
+    <%= email_field_tag 'email' %>
+  </div>
+  <div>
+    <%= label_tag 'password' %><br>
+    <%= password_field_tag 'password' %>
+  </div>
+  <div>
+    <%= label_tag 'password_confirmation'  %><br>
+    <%= password_field_tag 'password_confirmation' %>
+  </div>
+  <%= submit_tag 'Create My Account Already!' %>
+<% end %>
