@@ -14,12 +14,17 @@
       <li><%= link_to "Dashboard", dashboard_path %></li>
     </ul>
     <ul>
-      <li><%= link_to 'Register (new user)', '' %></li>
-      <li><%= link_to 'Sign In (create session)', '' %></li>
-      <li>Welcome <%= "USER NAME HERE" %>!</li>
-      <li><%= link_to 'Sign Out (destroy session)', '' %></li>
+      <% if current_user %>
+        <li>Welcome <%= current_user.name %>!</li>
+        <li><%= link_to 'Sign Out (destroy session)', session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Register (new user)', new_user_path %></li>
+        <li><%= link_to 'Sign In (create session)', new_session_path %></li>
+      <% end %>
     </ul>
   </nav>
+
+  <%= notice %>
   <%= yield %>
 
 </body>
